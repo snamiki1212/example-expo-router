@@ -1,5 +1,5 @@
 import { View, Text } from "react-native";
-import { Slot } from "expo-router";
+import { Slot, Stack } from "expo-router";
 
 export default function HomeLayout() {
   return (
@@ -7,10 +7,14 @@ export default function HomeLayout() {
       <View>
         <Text>this is header</Text>
       </View>
-      <Slot />
-      <View>
+      <Stack>
+        <Stack.Screen name="Service1Home" />
+        <Stack.Screen name="service1/home/modal1" />
+      </Stack>
+      {/* <Slot /> */}
+      {/* <View>
         <Text>this is footer</Text>
-      </View>
+      </View> */}
     </View>
   );
 }
