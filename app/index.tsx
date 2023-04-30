@@ -1,6 +1,19 @@
+import { useState, useEffect } from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { SplashScreen } from "expo-router";
 
 export default function Page() {
+  const [isReady, setReady] = useState(false);
+
+  useEffect(() => {
+    // Perform some sort of async data or asset fetching.
+    setTimeout(() => {
+      setReady(true);
+    }, 1_500);
+  }, []);
+
+  if (isReady) return <SplashScreen />;
+
   return (
     <View style={styles.container}>
       <View style={styles.main}>
