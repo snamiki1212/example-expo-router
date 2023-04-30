@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { SplashScreen } from "expo-router";
+import { StyleSheet, Text, View, Button } from "react-native";
+import { SplashScreen, Link } from "expo-router";
 
-export default function Page() {
+export default function AppPage() {
   const [isReady, setReady] = useState(false);
 
   useEffect(() => {
@@ -12,15 +12,21 @@ export default function Page() {
     }, 1_500);
   }, []);
 
-  if (isReady) return <SplashScreen />;
-
   return (
-    <View style={styles.container}>
-      <View style={styles.main}>
-        <Text style={styles.title}>Hello World</Text>
-        <Text style={styles.subtitle}>This is the first page of your app.</Text>
+    <>
+      {isReady && <SplashScreen />}
+      <View style={styles.container}>
+        <View style={styles.main}>
+          <Text>this is first view</Text>
+        </View>
+        <View>
+          <Link href="/service1">
+            <Button title="Service1" />
+          </Link>
+          {/* TODO: to service2 link */}
+        </View>
       </View>
-    </View>
+    </>
   );
 }
 
