@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Button } from "react-native";
 import { Link, useRouter } from "expo-router";
 
-export default function Home() {
+export default function Tab1() {
   const router = useRouter();
   const openModal = () => {
     router.push("/service1/home/modal1");
