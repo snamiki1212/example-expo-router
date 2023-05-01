@@ -1,13 +1,23 @@
-import { Link } from "expo-router";
-import { View, Text, Button } from "react-native";
+import { View, Text, StyleSheet, Button } from "react-native";
+import { Link, useRouter } from "expo-router";
 
 export default function Home() {
+  const router = useRouter();
+  const openModal = () => {
+    router.push("/service1/home/modal1");
+  };
   return (
-    <View>
-      <Text>This is Home Page</Text>
-      <Link href="/service1/home/modal1">
-        <Button title="modal1" />
-      </Link>
+    <View style={styles.container}>
+      <Text>This is Service1 Home Page</Text>
+      <Button onPress={openModal} title="open modal1" />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    // flex: 1,
+    alignItems: "center",
+    padding: 24,
+  },
+});

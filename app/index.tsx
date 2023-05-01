@@ -1,9 +1,16 @@
 import { useState, useEffect } from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
-import { SplashScreen, Link } from "expo-router";
+import { SplashScreen, useRouter } from "expo-router";
 
 export default function AppPage() {
   const [isReady, setReady] = useState(false);
+  const router = useRouter();
+  const toSitemapPage = () => {
+    router.push("/_sitemap");
+  };
+  const toService1Page = () => {
+    router.push("/service1");
+  };
 
   useEffect(() => {
     // Perform some sort of async data or asset fetching.
@@ -17,12 +24,12 @@ export default function AppPage() {
       {isReady && <SplashScreen />}
       <View style={styles.container}>
         <View style={styles.main}>
-          <Text>this is first view</Text>
+          <Text>This is first view</Text>
         </View>
         <View>
-          <Link href="/service1">
-            <Button title="Service1" />
-          </Link>
+          <Button title="to Service1" onPress={toService1Page} />
+          <Button title="to Sitemap" onPress={toSitemapPage} />
+
           {/* TODO: to service2 link */}
         </View>
       </View>

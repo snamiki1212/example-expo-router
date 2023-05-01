@@ -1,13 +1,23 @@
-import { View, Text, Button } from "react-native";
-import { Link } from "expo-router";
+import { View, Text, Button, StyleSheet } from "react-native";
+import { Link, useRouter } from "expo-router";
 
 export default function TutorialPage() {
+  const router = useRouter();
+  const toService1Home = () => {
+    router.push("/service1/home");
+  };
   return (
-    <View>
+    <View style={styles.container}>
       <Text>This is Tutorial Page</Text>
-      <Link href="/service1/home">
-        <Button title="Finish Tutorial" />
-      </Link>
+      <Button title="To Service1 Home" onPress={toService1Home} />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    // flex: 1,
+    alignItems: "center",
+    padding: 24,
+  },
+});
