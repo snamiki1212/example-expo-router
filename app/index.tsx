@@ -23,7 +23,7 @@ export default function AppPage() {
 
 const Content = () => {
   const router = useRouter();
-  const [withTutorial, toggleTutorial] = useTutorial();
+  const [isFinishedTutorial, toggleTutorial] = useTutorial();
 
   const toSitemapPage = () => {
     router.push("/_sitemap");
@@ -44,7 +44,7 @@ const Content = () => {
         <Button title="to Service1" onPress={toService1Page} />
         <Text>with tutorial</Text>
         <Switch
-          value={withTutorial}
+          value={!isFinishedTutorial}
           onChange={() => {
             toggleTutorial();
           }}

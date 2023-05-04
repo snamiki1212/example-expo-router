@@ -8,23 +8,20 @@ export default function Service1Page() {
   // const tutorialIsFinished = random;
   // console.info("Service1Page", { random });
 
-  const [withTutorial, toggleTutorial] = useTutorial();
+  const [isFinishedTutorial, toggleTutorial] = useTutorial();
 
   /**
    * Async run to toggle tutorial after rendering.
    */
   useEffect(() => {
-    console.info("in useEffect", { withTutorial });
-    if (!withTutorial) {
-      setTimeout(() => {
-        toggleTutorial();
-      }, 0);
-    }
-  }, [withTutorial, toggleTutorial]);
+    if (isFinishedTutorial) return;
+    setTimeout(() => {
+      toggleTutorial();
+    }, 0);
+  }, [isFinishedTutorial, toggleTutorial]);
 
-  if (withTutorial) {
-    return <Redirect href="/service1/tutorial" />;
+  if (isFinishedTutorial) {
+    return <Redirect href="/service1/home" />;
   }
-  console.info({ withTutorial });
-  return <Redirect href="/service1/home" />;
+  return <Redirect href="/service1/tutorial" />;
 }
