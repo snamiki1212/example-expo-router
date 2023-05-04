@@ -1,16 +1,10 @@
 import { useState, useEffect } from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, Text, View, Button, Switch } from "react-native";
 import { SplashScreen, useRouter } from "expo-router";
+import { useTutorial } from "../src/features/tutorial";
 
 export default function AppPage() {
   const [isReady, setReady] = useState(false);
-  const router = useRouter();
-  const toSitemapPage = () => {
-    router.push("/_sitemap");
-  };
-  const toService1Page = () => {
-    router.push("/service1");
-  };
 
   useEffect(() => {
     // Perform some sort of async data or asset fetching.
@@ -22,20 +16,45 @@ export default function AppPage() {
   return (
     <>
       {isReady && <SplashScreen />}
-      <View style={styles.container}>
-        <View style={styles.main}>
-          <Text>This is first view</Text>
-        </View>
-        <View>
-          <Button title="to Service1" onPress={toService1Page} />
-          <Button title="to Sitemap" onPress={toSitemapPage} />
-
-          {/* TODO: to service2 link */}
-        </View>
-      </View>
+      <Content />
     </>
   );
 }
+
+const Content = () => {
+  const router = useRouter();
+  const [withTutorial, toggleTutorial] = useTutorial();
+
+  const toSitemapPage = () => {
+    router.push("/_sitemap");
+  };
+  const toService1Page = () => {
+    router.push("/service1");
+  };
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.main}>
+        <Text>This is first view</Text>
+      </View>
+      <View>
+        <Button title="to Service1" onPress={toService1Page} />
+        <Text>with tutorial</Text>
+        <Switch
+          value={withTutorial}
+          onChange={() => {
+            toggleTutorial();
+          }}
+        />
+      </View>
+      <View>
+        <Button title="to Sitemap" onPress={toSitemapPage} />
+
+        {/* TODO: to service2 link */}
+      </View>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -48,13 +67,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     maxWidth: 960,
     marginHorizontal: "auto",
-  },
-  title: {
-    fontSize: 64,
-    fontWeight: "bold",
-  },
-  subtitle: {
-    fontSize: 36,
-    color: "#38434D",
   },
 });
