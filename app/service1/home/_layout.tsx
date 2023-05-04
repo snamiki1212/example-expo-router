@@ -18,6 +18,7 @@ export default function Service1HomeLayout() {
           name="(tab3)/index"
           options={{ title: "Tab3", tabBarIcon: () => <Text>🚀</Text> }}
         />
+        <Tabs.Screen name="modal1" options={{ href: null }} />
       </Tabs>
     </>
   );
