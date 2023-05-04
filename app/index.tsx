@@ -31,6 +31,9 @@ const Content = () => {
   const toService1Page = () => {
     router.push("/service1");
   };
+  const toService2Page = () => {
+    router.push("/service2");
+  };
 
   return (
     <View style={styles.container}>
@@ -48,9 +51,10 @@ const Content = () => {
         />
       </View>
       <View>
+        <Button title="to Service2" onPress={toService2Page} />
+      </View>
+      <View>
         <Button title="to Sitemap" onPress={toSitemapPage} />
-
-        {/* TODO: to service2 link */}
       </View>
     </View>
   );
