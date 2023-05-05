@@ -20,6 +20,10 @@ export default function Service1HomeLayout() {
         />
         <Tabs.Screen name="modal1" options={{ href: null }} />
       </Tabs>
+      <Stack.Screen
+        name="/service1/home/modal1"
+        options={{ presentation: "modal" }}
+      />
     </>
   );
 }
