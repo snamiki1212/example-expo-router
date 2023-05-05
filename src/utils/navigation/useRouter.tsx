@@ -26,9 +26,25 @@ export const useRouter = <T extends HrefBase>(): Router<T> => {
     },
     [router.push]
   );
-  const replace = useCallback(() => {}, []);
-  const back = useCallback(() => {}, []);
-  const setParams = useCallback(() => {}, []);
+
+  const replace = useCallback(
+    (href: T) => {
+      router.replace(href);
+    },
+    [router.replace]
+  );
+
+  const back = router.back;
+
+  /**
+   * TODO: implement type puzzle
+   *
+   * e.g.) setParams<"/service2">(params) // <== 'params' should be type checked based on passing pathname in generic.
+   */
+  type SetParamsArgs = Parameters<typeof router.setParams>;
+  const setParams = useCallback((...params: SetParamsArgs) => {
+    router.setParams(...params);
+  }, []);
 
   return {
     push,
