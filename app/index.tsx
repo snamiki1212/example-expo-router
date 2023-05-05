@@ -38,23 +38,22 @@ const Content = () => {
   return (
     <View style={styles.container}>
       <View style={styles.main}>
-        <Text>This is first view</Text>
-      </View>
-      <View>
-        <Button title="to Service1" onPress={toService1Page} />
-        <Text>with tutorial</Text>
-        <Switch
-          value={!isFinishedTutorial}
-          onChange={() => {
-            toggleTutorial();
-          }}
-        />
-      </View>
-      <View>
-        <Button title="to Service2" onPress={toService2Page} />
-      </View>
-      <View>
-        <Button title="to Sitemap" onPress={toSitemapPage} />
+        <View>
+          <Button title="to Service1" onPress={toService1Page} />
+          <Text>with tutorial</Text>
+          <Switch
+            value={!isFinishedTutorial}
+            onChange={() => {
+              toggleTutorial();
+            }}
+          />
+        </View>
+        <View>
+          <Button title="to Service2" onPress={toService2Page} />
+        </View>
+        <View>
+          <Button title="to Sitemap" onPress={toSitemapPage} />
+        </View>
       </View>
     </View>
   );
