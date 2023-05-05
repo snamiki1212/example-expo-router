@@ -15,6 +15,7 @@ const toggleTutorialMachine = createMachine<
 >({
   id: "tutorial",
   initial: "UNFINISHED",
+  predictableActionArguments: true,
   schema: {
     context: {},
     events: {} as TutorialEvent,

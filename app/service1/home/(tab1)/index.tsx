@@ -4,7 +4,7 @@ import { Link, useRouter } from "expo-router";
 export default function Tab1() {
   const router = useRouter();
   const openModal = () => {
-    router.push("/service1/home/modal1");
+    router.push("/service1/home/(tab1)/modal");
   };
   return (
     <View style={styles.container}>
