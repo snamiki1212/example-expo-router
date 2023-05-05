@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet, Button } from "react-native";
-import { Link, useRouter } from "expo-router";
+import { useRouter } from "../../../../src/navitaion/useRouter";
 
 export default function Tab1() {
   const router = useRouter();
   const openModal = () => {
-    router.push("/service1/home/(tab1)/modal");
+    router.push({ pathname: "/service1/home/(tab1)/modal" });
   };
   return (
     <View style={styles.container}>

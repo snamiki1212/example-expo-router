@@ -1,10 +1,10 @@
 import { Text, View, Button } from "react-native";
-import { Stack, useRouter } from "expo-router";
+import { useRouter } from "../../src/navitaion/useRouter";
 
 export default function Service2Page() {
   const router = useRouter();
   const openModal = () => {
-    router.push("/service2/modal");
+    router.push({ pathname: "/service2/modal" });
   };
   return (
     <View>

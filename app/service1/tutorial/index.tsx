@@ -1,10 +1,10 @@
 import { View, Text, Button, StyleSheet } from "react-native";
-import { Link, useRouter } from "expo-router";
+import { useRouter } from "../../../src/navitaion/useRouter";
 
 export default function TutorialPage() {
   const router = useRouter();
   const toService1Home = () => {
-    router.push("/service1/home");
+    router.push({ pathname: "/service1/home" });
   };
   return (
     <View style={styles.container}>

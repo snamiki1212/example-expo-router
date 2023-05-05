@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { StyleSheet, Text, View, Button, Switch } from "react-native";
-import { SplashScreen, useRouter } from "expo-router";
+import { SplashScreen } from "expo-router";
 import { useTutorial } from "../src/features/tutorial";
+import { useRouter } from "../src/navitaion/useRouter";
 
 export default function AppPage() {
   const [isReady, setReady] = useState(false);
@@ -26,13 +27,19 @@ const Content = () => {
   const [isFinishedTutorial, toggleTutorial] = useTutorial();
 
   const toSitemapPage = () => {
-    router.push("/_sitemap");
+    router.push({ pathname: "_sitemap" });
   };
   const toService1Page = () => {
-    router.push("/service1");
+    router.push({
+      pathname: "/service1",
+      params: { service1: "this is service1 params" },
+    });
   };
   const toService2Page = () => {
-    router.push("/service2");
+    router.push({
+      pathname: "/service2",
+      params: { service2: "this is service2 params" },
+    });
   };
 
   return (
