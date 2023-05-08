@@ -18,7 +18,7 @@ interface Service2 extends HrefBase {
 }
 
 interface Sitemap extends HrefBase {
-  pathname: "_sitemap";
+  pathname: "/_sitemap";
 }
 
 interface Service1_Home_Tab1_Modal extends HrefBase {

@@ -48,7 +48,6 @@ export const TutorialProvider = ({
 };
 
 export const useTutorial = (): readonly [boolean, () => void] => {
-  // const [state, send] = useMachine(toggleTutorialMachine);
   const { value } = useContext(TutorialContext);
   const [state, send] = useActor(value);
   const isFinished = state.matches("FINISHED");
