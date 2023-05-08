@@ -1,7 +1,7 @@
 # example-expo-router
 
 ```shell
-npm i
+yarn
 npx expo --clear
 ```
 
