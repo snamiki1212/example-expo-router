@@ -2,7 +2,7 @@
 
 ```shell
 yarn
-npx expo --clear
+yarn start
 ```
 
 ## Stacks
