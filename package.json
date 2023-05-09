@@ -26,8 +26,7 @@
   },
   "devDependencies": {
     "@types/react": "~18.0.27",
-    "@types/react-native": "~0.69.1",
-    "@babel/core": "^7.12.9"
+    "@types/react-native": "~0.69.1"
   },
   "resolutions": {
     "metro": "0.73.7",
