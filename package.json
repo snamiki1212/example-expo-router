@@ -17,6 +17,7 @@
     "expo-router": "^1.5.3",
     "expo-status-bar": "~1.4.4",
     "react": "18.2.0",
+    "react-dom": "18.2.0",
     "react-native": "0.71.7",
     "react-native-safe-area-context": "4.5.0",
     "react-native-screens": "~3.20.0",
@@ -27,7 +28,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.0"
   },
-  "overrides": {
+  "resolutions": {
     "metro": "0.76.0",
     "metro-resolver": "0.76.0"
   },

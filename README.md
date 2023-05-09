@@ -1,8 +1,8 @@
 # example-expo-router
 
 ```shell
-npm i
-npx expo --clear
+yarn
+yarn start
 ```
 
 ## Stacks
